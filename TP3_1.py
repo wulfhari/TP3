@@ -56,7 +56,7 @@ def ajout(e, s):
     return s
 
 
-"""
+
 from TP3_2 import cardinalite, union, diff_symetrique, retrait
 
 
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     test_union()
     test_diff_symetrique()
     test_retrait()
-"""    
+    
     
 s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
 s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]    
