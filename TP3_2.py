@@ -55,8 +55,8 @@ def retrait(e, s):
 from TP3_1 import ajout, appartient, difference, intersection
 
 def test_appartient():
-    e = "Quebec""
-    s = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8
+    e = "Quebec"
+    s = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
     assert(True == appartient(e, s))
          
     e = 900
