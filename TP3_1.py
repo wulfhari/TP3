@@ -93,8 +93,8 @@ s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
 s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]    
 e = "Quebec"
 f = "Canada"
-#print(appartient(e,s2))
-#print(intersection(s1,s2))
+print(appartient(e,s2))
+print(intersection(s1,s2))
 print(difference(s1,s2))
 print(ajout(f,s2))
 print(ajout(e,s2))
