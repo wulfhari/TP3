@@ -35,27 +35,15 @@ def union(s1, s2):
     return united
 
 def diff_symetrique(s1, s2):
-<<<<<<< HEAD
-=======
     from TP3_1 import intersection
->>>>>>> ad51d18cd3cae20465e8545d5f24772be6ea2838
     """Commentaires ?"""
     uni = union(s1,s2)
     print uni
     inter = intersection(s1,s2)
-<<<<<<< HEAD
-    for i in uni:
-        if i in inter:
-            del(uni[uni.index(i)])
-        else:
-            pass
-
-=======
+    
     for i in inter:       
         uni.remove(i)        
->>>>>>> ad51d18cd3cae20465e8545d5f24772be6ea2838
     return uni
-    
 
 def retrait(e, s):
     """Commentaires ?"""
@@ -63,8 +51,7 @@ def retrait(e, s):
         if i == e:
             del(s[s.index(i)])
     return s
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 from TP3_1 import ajout, appartient, difference, intersection
 
@@ -98,54 +85,10 @@ if __name__ == "__main__":
     test_difference()
     test_ajout()
 
-# Coucou biloute
-=======
-# 
-=======
-#  
->>>>>>> 02e4e8c19a1145a344ebef0671921007f9b52ece
-# from TP3_1 import ajout, appartient, difference, intersection
-#  
-# def test_appartient():
-#     e = "Quebec"
-#     s = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
-#     assert(True == appartient(e, s))
-#      
-#     e = 900
-#     s = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
-#     assert(False == appartient(e, s))
-#  
-# def test_intersection():
-#     s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
-#     s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
-#     assert(['a', 'clair', 'Quebec', 7, 6.7, 9.8] == intersection(s1, s2)
-#             
-# def test_difference():
-#     s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
-#     s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
-#     assert(["b","t","allo","stop",2,3,54,5.4] == difference(s1, s2))
-#             
-# def test_ajout():
-#     e = "Volga"
-#     s = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
-#     assert(["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8,"Volga"] == ajout(e, s))
-#             
-# if __name__ == "__main__":
-#     test_appartient()
-#     test_intersection()
-#     test_difference()
-#     test_ajout()
-<<<<<<< HEAD
+
 
 
 s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
 s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
-print(diff_symetrique(s1, s2))
->>>>>>> ad51d18cd3cae20465e8545d5f24772be6ea2838
-=======
-# 
-# 
-# s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
-# s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
-# print(diff_symetrique(s1, s2))
->>>>>>> 02e4e8c19a1145a344ebef0671921007f9b52ece
+
+
