@@ -73,13 +73,14 @@ def test_union():
 def test_diff_symetrique():
     s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
     s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
-    diff_symetrique(s1, s2)
-    #assert all(a[key] > b[key] for key in b)
+    s3 = ["b","e","f","t","123","go","allo","stop",1,4,78,5.3,2,3,54,5.4]
+    assert(s3 ==  diff_symetrique(s1, s2))
 
 def test_retrait():
     e = "clair"
     s = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
-    retrait(e, s)
+    s1 = retrait(e,s)
+    assert(s1.count(e) == 0)
 
 
 if __name__ == "__main__":
@@ -93,9 +94,9 @@ s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
 s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]    
 e = "Quebec"
 f = "Canada"
-print(appartient(e,s2))
-print(intersection(s1,s2))
-print(difference(s1,s2))
-print(ajout(f,s2))
-print(ajout(e,s2))
+#print(appartient(e,s2))
+#print(intersection(s1,s2))
+#print(difference(s1,s2))
+#print(ajout(f,s2))
+#print(ajout(e,s2))
 
