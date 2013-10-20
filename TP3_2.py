@@ -3,7 +3,7 @@
 
 """
 @file: TP3_2.py ------------------------------- NE PAS MODIFIER LE NOM DU FICHIER !
-@author:  C. Besse
+@author:  Zoé Tolszczuk-Leclerc 908 178 188
 
 Module fournissant les fonctions suivantes :
     - Cardinalité
@@ -28,12 +28,10 @@ def union(s1, s2):
     for i in s1:
         united.append(i)
     for j in s2:
-        united.append(j)
-    for u in united:
-        for k in united:
-            if u == k:
-                del(united[k])
-            
+        if j in united:
+            pass
+        else:
+            united.append(j)
     return united
 
 def diff_symetrique(s1, s2):
@@ -41,38 +39,47 @@ def diff_symetrique(s1, s2):
     from TP3_1 import intersection
     uni = union(s1,s2)
     inter = intersection(s1,s2)
-    return uni - inter
+    
+    return list(set(uni)-set(inter))
+    
 
 def retrait(e, s):
     """Commentaires ?"""
-    for i in range(0,len(s)):
+    for i in s:
         if i == e:
-            del(s[i])
+            del(s[s.index(i)])
+    return s
 
 from TP3_1 import ajout, appartient, difference, intersection
 
 def test_appartient():
-    e = "bla"
-    s = "bla"
-    appartient(e, s)
+    e = "Quebec"
+    s = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
+    assert(True == appartient(e, s))
+    
+    e = 900
+    s = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
+    assert(False == appartient(e, s))
 
 def test_intersection():
-    s1 = "bla"
-    s2 = "bla"
-    intersection(s1, s2)
-
+    s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
+    s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
+    assert(['a', 'clair', 'Quebec', 7, 6.7, 9.8] == intersection(s1, s2)
+           
 def test_difference():
-    s1 = "bla"
-    s2 = "bla"
-    difference(s1, s2)
-
+    s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
+    s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
+    assert(["b","t","allo","stop",2,3,54,5.4] == difference(s1, s2))
+           
 def test_ajout():
-    e = "bla"
-    s = "bla"
-    ajout(e, s)
-
+    e = "Volga"
+    s = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
+    assert(["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8,"Volga"] == ajout(e, s))
+           
 if __name__ == "__main__":
     test_appartient()
     test_intersection()
     test_difference()
     test_ajout()
+
+# Coucou biloute
