@@ -36,11 +36,16 @@ def union(s1, s2):
 
 def diff_symetrique(s1, s2):
     """Commentaires ?"""
-    from TP3_1 import intersection
     uni = union(s1,s2)
+    print uni
     inter = intersection(s1,s2)
-    
-    return list(set(uni)-set(inter))
+    for i in uni:
+        if i in inter:
+            del(uni[uni.index(i)])
+        else:
+            pass
+
+    return uni
     
 
 def retrait(e, s):
