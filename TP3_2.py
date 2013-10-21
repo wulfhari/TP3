@@ -62,18 +62,20 @@ def test_appartient():
 def test_intersection():
     s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
     s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
-    
-    assert (["a", "clair", "Quebec", 7, 6.7, 9.8] == intersection(s1, s2))
+    s3 = ["a", "clair", "Quebec", 7, 6.7, 9.8]
+    for i in s1:
+        for j in s2:
+            if i ==j:
+                assert(s3.count(i) ==1)
+   
 
 def test_difference():
     s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
     s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
     s3 = ["b","t","allo","stop",2,3,54,5.4]
     assert ( len(s3) == len(difference(s1, s2)))
-    for i in s1:
-        for j in s2:
-            if i == j:
-                assert (s3.count(i) == 0)
+    for i in s2:
+        assert (s3.count(i) == 0)
 
 def test_ajout():
     e = "Volga"
@@ -87,9 +89,4 @@ if __name__ == "__main__":
     test_intersection()
     test_difference()
     test_ajout()
-
-
-s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
-s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
-
 

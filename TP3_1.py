@@ -17,10 +17,6 @@ Il fournit également les tests aux fonction suivantes :
     - Test de la différence symétrique
     - Test du retrait
 """
-
-list_1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
-list_2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
-
 def appartient(e, s):
     """Commentaires ?"""
     for i in range(len(s)):
