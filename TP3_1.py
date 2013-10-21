@@ -68,13 +68,19 @@ def test_union():
     s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
     s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
     s3 = ["a","b","e","f","t","123","go","allo","stop","clair","Quebec",1,4,78,5.3,2,3,54,7,5.4,6.7,9.8]
-    assert(s3 == union(s1, s2))
+    for i in s1:
+        assert (s3.count(i) == 1)
+    for j in s2:
+        assert (s3.count(j) == 1)
 
 def test_diff_symetrique():
     s1 = ["a","b","t","allo","stop","clair","Quebec",2,3,54,7,5.4,6.7,9.8]
     s2 = ["a","e","f","123","go","clair","Quebec",1,4,78,7,5.3,6.7,9.8]
     s3 = ["b","e","f","t","123","go","allo","stop",1,4,78,5.3,2,3,54,5.4]
-    assert(s3 ==  diff_symetrique(s1, s2))
+    for i in s1:
+        for j in s2:
+            if i == j:
+                assert (s3.count(i) == 0)
 
 def test_retrait():
     e = "clair"
